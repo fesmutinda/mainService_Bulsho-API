@@ -1,0 +1,1349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/codeunit/onlineregistration" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/onlineregistration" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/codeunit/onlineregistration" xmlns="http://www.w3.org/2001/XMLSchema">
+      <element name="AttachDocuments">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="docNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="attachment" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="AttachDocuments_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnAccountLogin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnAccountLogin_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnActivateAccount">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="fullName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="mobileNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnActivateAccount_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangeOTP">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangeOTP_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="accountNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangeRequest">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="request" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnChangeRequest_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateAccount">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="hashedPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateAccount_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateUsername">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnCreateUsername_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGenerateOTP">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnGenerateOTP_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGetMemberDepositStatement">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="datefilter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileExt" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGetMemberDepositStatement_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnGetMemberLoanStatement">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileExt" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGetMemberLoanStatement_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnGetMemberLoansGuaranteed">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileExt" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGetMemberLoansGuaranteed_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnGetMemberLoansGuarantors">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileExt" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGetMemberLoansGuarantors_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnGetMemberStatement">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="datefilter" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="fileExt" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnGetMemberStatement_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="FnLogin2">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailOrUsername" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnLogin2_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnLogin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnLogin_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnMemberStatement">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bulShoNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnMemberStatement_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnPortalAccount">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="hashedPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnPortalAccount_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnProfileDetails">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="bEmail" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bulNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnProfileDetails_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnResetPassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="accountNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="password" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="confirmPassword" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="otpCode" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnResetPassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSendOTP">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnSendOTP_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnShares">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="bulShoNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnShares_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnUpdatePassword">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="hashedPassword" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnUpdatePassword_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnVerifyOTP">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="otp" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnVerifyOTP_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnmemberInfo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="FnmemberInfo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetDashboardStatistics">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="GetDashboardStatistics_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="MembReg">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="firstName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="midName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lastName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="roCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="mobileNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="country" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="town" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="gender" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="maritalStatus" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="employementInfo" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="accountC" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="membershipType" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="MembReg_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="MiniStatement">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="MiniStatement_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="NextOfKin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="name" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="telNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="appNo" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="NextOfKin_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="boolean" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PortalApplication">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="firstName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="middleName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="lastName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="emailAddress" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="typeOfMembership" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="dateOfBirth" type="date" />
+            <element minOccurs="1" maxOccurs="1" name="identityDocument" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="idNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="mobilePhone" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="whatsappNo" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="gender" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="maritalStatus" type="int" />
+            <element minOccurs="1" maxOccurs="1" name="secondaryPhone" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="facebookName" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="postalCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="state" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="membersResidency" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="branchCode" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="town" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="country" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="positionInSacco" type="int" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="PortalApplication_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SetUsernameOnFirstLogin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="emailOrUsername" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="SetUsernameOnFirstLogin_Result">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnActivateAccount2">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNumber" type="string" />
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnActivateAccount2_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetBULNumber">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="username" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetBULNumber_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetBranchCodes">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnGetBranchCodes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetCountries">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnGetCountries_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetMemberNo">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="email" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetMemberNo_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetNextofkin">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="memberNumber" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetNextofkin_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetPostCodes">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnGetPostCodes_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+      <element name="fnGetStates">
+        <complexType>
+          <sequence />
+        </complexType>
+      </element>
+      <element name="fnGetStates_Result">
+        <complexType>
+          <sequence>
+            <element minOccurs="1" maxOccurs="1" name="return_value" type="string" />
+          </sequence>
+        </complexType>
+      </element>
+    </schema>
+  </types>
+  <message name="AttachDocuments">
+    <part name="parameters" element="tns:AttachDocuments" />
+  </message>
+  <message name="AttachDocuments_Result">
+    <part name="parameters" element="tns:AttachDocuments_Result" />
+  </message>
+  <message name="FnAccountLogin">
+    <part name="parameters" element="tns:FnAccountLogin" />
+  </message>
+  <message name="FnAccountLogin_Result">
+    <part name="parameters" element="tns:FnAccountLogin_Result" />
+  </message>
+  <message name="FnActivateAccount">
+    <part name="parameters" element="tns:FnActivateAccount" />
+  </message>
+  <message name="FnActivateAccount_Result">
+    <part name="parameters" element="tns:FnActivateAccount_Result" />
+  </message>
+  <message name="FnChangeOTP">
+    <part name="parameters" element="tns:FnChangeOTP" />
+  </message>
+  <message name="FnChangeOTP_Result">
+    <part name="parameters" element="tns:FnChangeOTP_Result" />
+  </message>
+  <message name="FnChangePassword">
+    <part name="parameters" element="tns:FnChangePassword" />
+  </message>
+  <message name="FnChangePassword_Result">
+    <part name="parameters" element="tns:FnChangePassword_Result" />
+  </message>
+  <message name="FnChangeRequest">
+    <part name="parameters" element="tns:FnChangeRequest" />
+  </message>
+  <message name="FnChangeRequest_Result">
+    <part name="parameters" element="tns:FnChangeRequest_Result" />
+  </message>
+  <message name="FnCreateAccount">
+    <part name="parameters" element="tns:FnCreateAccount" />
+  </message>
+  <message name="FnCreateAccount_Result">
+    <part name="parameters" element="tns:FnCreateAccount_Result" />
+  </message>
+  <message name="FnCreateUsername">
+    <part name="parameters" element="tns:FnCreateUsername" />
+  </message>
+  <message name="FnCreateUsername_Result">
+    <part name="parameters" element="tns:FnCreateUsername_Result" />
+  </message>
+  <message name="FnGenerateOTP">
+    <part name="parameters" element="tns:FnGenerateOTP" />
+  </message>
+  <message name="FnGenerateOTP_Result">
+    <part name="parameters" element="tns:FnGenerateOTP_Result" />
+  </message>
+  <message name="FnGetMemberDepositStatement">
+    <part name="parameters" element="tns:FnGetMemberDepositStatement" />
+  </message>
+  <message name="FnGetMemberDepositStatement_Result">
+    <part name="parameters" element="tns:FnGetMemberDepositStatement_Result" />
+  </message>
+  <message name="FnGetMemberLoanStatement">
+    <part name="parameters" element="tns:FnGetMemberLoanStatement" />
+  </message>
+  <message name="FnGetMemberLoanStatement_Result">
+    <part name="parameters" element="tns:FnGetMemberLoanStatement_Result" />
+  </message>
+  <message name="FnGetMemberLoansGuaranteed">
+    <part name="parameters" element="tns:FnGetMemberLoansGuaranteed" />
+  </message>
+  <message name="FnGetMemberLoansGuaranteed_Result">
+    <part name="parameters" element="tns:FnGetMemberLoansGuaranteed_Result" />
+  </message>
+  <message name="FnGetMemberLoansGuarantors">
+    <part name="parameters" element="tns:FnGetMemberLoansGuarantors" />
+  </message>
+  <message name="FnGetMemberLoansGuarantors_Result">
+    <part name="parameters" element="tns:FnGetMemberLoansGuarantors_Result" />
+  </message>
+  <message name="FnGetMemberStatement">
+    <part name="parameters" element="tns:FnGetMemberStatement" />
+  </message>
+  <message name="FnGetMemberStatement_Result">
+    <part name="parameters" element="tns:FnGetMemberStatement_Result" />
+  </message>
+  <message name="FnLogin2">
+    <part name="parameters" element="tns:FnLogin2" />
+  </message>
+  <message name="FnLogin2_Result">
+    <part name="parameters" element="tns:FnLogin2_Result" />
+  </message>
+  <message name="FnLogin">
+    <part name="parameters" element="tns:FnLogin" />
+  </message>
+  <message name="FnLogin_Result">
+    <part name="parameters" element="tns:FnLogin_Result" />
+  </message>
+  <message name="FnMemberStatement">
+    <part name="parameters" element="tns:FnMemberStatement" />
+  </message>
+  <message name="FnMemberStatement_Result">
+    <part name="parameters" element="tns:FnMemberStatement_Result" />
+  </message>
+  <message name="FnPortalAccount">
+    <part name="parameters" element="tns:FnPortalAccount" />
+  </message>
+  <message name="FnPortalAccount_Result">
+    <part name="parameters" element="tns:FnPortalAccount_Result" />
+  </message>
+  <message name="FnProfileDetails">
+    <part name="parameters" element="tns:FnProfileDetails" />
+  </message>
+  <message name="FnProfileDetails_Result">
+    <part name="parameters" element="tns:FnProfileDetails_Result" />
+  </message>
+  <message name="FnResetPassword">
+    <part name="parameters" element="tns:FnResetPassword" />
+  </message>
+  <message name="FnResetPassword_Result">
+    <part name="parameters" element="tns:FnResetPassword_Result" />
+  </message>
+  <message name="FnSendOTP">
+    <part name="parameters" element="tns:FnSendOTP" />
+  </message>
+  <message name="FnSendOTP_Result">
+    <part name="parameters" element="tns:FnSendOTP_Result" />
+  </message>
+  <message name="FnShares">
+    <part name="parameters" element="tns:FnShares" />
+  </message>
+  <message name="FnShares_Result">
+    <part name="parameters" element="tns:FnShares_Result" />
+  </message>
+  <message name="FnUpdatePassword">
+    <part name="parameters" element="tns:FnUpdatePassword" />
+  </message>
+  <message name="FnUpdatePassword_Result">
+    <part name="parameters" element="tns:FnUpdatePassword_Result" />
+  </message>
+  <message name="FnVerifyOTP">
+    <part name="parameters" element="tns:FnVerifyOTP" />
+  </message>
+  <message name="FnVerifyOTP_Result">
+    <part name="parameters" element="tns:FnVerifyOTP_Result" />
+  </message>
+  <message name="FnmemberInfo">
+    <part name="parameters" element="tns:FnmemberInfo" />
+  </message>
+  <message name="FnmemberInfo_Result">
+    <part name="parameters" element="tns:FnmemberInfo_Result" />
+  </message>
+  <message name="GetDashboardStatistics">
+    <part name="parameters" element="tns:GetDashboardStatistics" />
+  </message>
+  <message name="GetDashboardStatistics_Result">
+    <part name="parameters" element="tns:GetDashboardStatistics_Result" />
+  </message>
+  <message name="MembReg">
+    <part name="parameters" element="tns:MembReg" />
+  </message>
+  <message name="MembReg_Result">
+    <part name="parameters" element="tns:MembReg_Result" />
+  </message>
+  <message name="MiniStatement">
+    <part name="parameters" element="tns:MiniStatement" />
+  </message>
+  <message name="MiniStatement_Result">
+    <part name="parameters" element="tns:MiniStatement_Result" />
+  </message>
+  <message name="NextOfKin">
+    <part name="parameters" element="tns:NextOfKin" />
+  </message>
+  <message name="NextOfKin_Result">
+    <part name="parameters" element="tns:NextOfKin_Result" />
+  </message>
+  <message name="PortalApplication">
+    <part name="parameters" element="tns:PortalApplication" />
+  </message>
+  <message name="PortalApplication_Result">
+    <part name="parameters" element="tns:PortalApplication_Result" />
+  </message>
+  <message name="SetUsernameOnFirstLogin">
+    <part name="parameters" element="tns:SetUsernameOnFirstLogin" />
+  </message>
+  <message name="SetUsernameOnFirstLogin_Result">
+    <part name="parameters" element="tns:SetUsernameOnFirstLogin_Result" />
+  </message>
+  <message name="fnActivateAccount2">
+    <part name="parameters" element="tns:fnActivateAccount2" />
+  </message>
+  <message name="fnActivateAccount2_Result">
+    <part name="parameters" element="tns:fnActivateAccount2_Result" />
+  </message>
+  <message name="fnGetBULNumber">
+    <part name="parameters" element="tns:fnGetBULNumber" />
+  </message>
+  <message name="fnGetBULNumber_Result">
+    <part name="parameters" element="tns:fnGetBULNumber_Result" />
+  </message>
+  <message name="fnGetBranchCodes">
+    <part name="parameters" element="tns:fnGetBranchCodes" />
+  </message>
+  <message name="fnGetBranchCodes_Result">
+    <part name="parameters" element="tns:fnGetBranchCodes_Result" />
+  </message>
+  <message name="fnGetCountries">
+    <part name="parameters" element="tns:fnGetCountries" />
+  </message>
+  <message name="fnGetCountries_Result">
+    <part name="parameters" element="tns:fnGetCountries_Result" />
+  </message>
+  <message name="fnGetMemberNo">
+    <part name="parameters" element="tns:fnGetMemberNo" />
+  </message>
+  <message name="fnGetMemberNo_Result">
+    <part name="parameters" element="tns:fnGetMemberNo_Result" />
+  </message>
+  <message name="fnGetNextofkin">
+    <part name="parameters" element="tns:fnGetNextofkin" />
+  </message>
+  <message name="fnGetNextofkin_Result">
+    <part name="parameters" element="tns:fnGetNextofkin_Result" />
+  </message>
+  <message name="fnGetPostCodes">
+    <part name="parameters" element="tns:fnGetPostCodes" />
+  </message>
+  <message name="fnGetPostCodes_Result">
+    <part name="parameters" element="tns:fnGetPostCodes_Result" />
+  </message>
+  <message name="fnGetStates">
+    <part name="parameters" element="tns:fnGetStates" />
+  </message>
+  <message name="fnGetStates_Result">
+    <part name="parameters" element="tns:fnGetStates_Result" />
+  </message>
+  <portType name="onlineregistration_Port">
+    <operation name="AttachDocuments">
+      <input name="AttachDocuments" message="tns:AttachDocuments" />
+      <output name="AttachDocuments_Result" message="tns:AttachDocuments_Result" />
+    </operation>
+    <operation name="FnAccountLogin">
+      <input name="FnAccountLogin" message="tns:FnAccountLogin" />
+      <output name="FnAccountLogin_Result" message="tns:FnAccountLogin_Result" />
+    </operation>
+    <operation name="FnActivateAccount">
+      <input name="FnActivateAccount" message="tns:FnActivateAccount" />
+      <output name="FnActivateAccount_Result" message="tns:FnActivateAccount_Result" />
+    </operation>
+    <operation name="FnChangeOTP">
+      <input name="FnChangeOTP" message="tns:FnChangeOTP" />
+      <output name="FnChangeOTP_Result" message="tns:FnChangeOTP_Result" />
+    </operation>
+    <operation name="FnChangePassword">
+      <input name="FnChangePassword" message="tns:FnChangePassword" />
+      <output name="FnChangePassword_Result" message="tns:FnChangePassword_Result" />
+    </operation>
+    <operation name="FnChangeRequest">
+      <input name="FnChangeRequest" message="tns:FnChangeRequest" />
+      <output name="FnChangeRequest_Result" message="tns:FnChangeRequest_Result" />
+    </operation>
+    <operation name="FnCreateAccount">
+      <input name="FnCreateAccount" message="tns:FnCreateAccount" />
+      <output name="FnCreateAccount_Result" message="tns:FnCreateAccount_Result" />
+    </operation>
+    <operation name="FnCreateUsername">
+      <input name="FnCreateUsername" message="tns:FnCreateUsername" />
+      <output name="FnCreateUsername_Result" message="tns:FnCreateUsername_Result" />
+    </operation>
+    <operation name="FnGenerateOTP">
+      <input name="FnGenerateOTP" message="tns:FnGenerateOTP" />
+      <output name="FnGenerateOTP_Result" message="tns:FnGenerateOTP_Result" />
+    </operation>
+    <operation name="FnGetMemberDepositStatement">
+      <input name="FnGetMemberDepositStatement" message="tns:FnGetMemberDepositStatement" />
+      <output name="FnGetMemberDepositStatement_Result" message="tns:FnGetMemberDepositStatement_Result" />
+    </operation>
+    <operation name="FnGetMemberLoanStatement">
+      <input name="FnGetMemberLoanStatement" message="tns:FnGetMemberLoanStatement" />
+      <output name="FnGetMemberLoanStatement_Result" message="tns:FnGetMemberLoanStatement_Result" />
+    </operation>
+    <operation name="FnGetMemberLoansGuaranteed">
+      <input name="FnGetMemberLoansGuaranteed" message="tns:FnGetMemberLoansGuaranteed" />
+      <output name="FnGetMemberLoansGuaranteed_Result" message="tns:FnGetMemberLoansGuaranteed_Result" />
+    </operation>
+    <operation name="FnGetMemberLoansGuarantors">
+      <input name="FnGetMemberLoansGuarantors" message="tns:FnGetMemberLoansGuarantors" />
+      <output name="FnGetMemberLoansGuarantors_Result" message="tns:FnGetMemberLoansGuarantors_Result" />
+    </operation>
+    <operation name="FnGetMemberStatement">
+      <input name="FnGetMemberStatement" message="tns:FnGetMemberStatement" />
+      <output name="FnGetMemberStatement_Result" message="tns:FnGetMemberStatement_Result" />
+    </operation>
+    <operation name="FnLogin2">
+      <input name="FnLogin2" message="tns:FnLogin2" />
+      <output name="FnLogin2_Result" message="tns:FnLogin2_Result" />
+    </operation>
+    <operation name="FnLogin">
+      <input name="FnLogin" message="tns:FnLogin" />
+      <output name="FnLogin_Result" message="tns:FnLogin_Result" />
+    </operation>
+    <operation name="FnMemberStatement">
+      <input name="FnMemberStatement" message="tns:FnMemberStatement" />
+      <output name="FnMemberStatement_Result" message="tns:FnMemberStatement_Result" />
+    </operation>
+    <operation name="FnPortalAccount">
+      <input name="FnPortalAccount" message="tns:FnPortalAccount" />
+      <output name="FnPortalAccount_Result" message="tns:FnPortalAccount_Result" />
+    </operation>
+    <operation name="FnProfileDetails">
+      <input name="FnProfileDetails" message="tns:FnProfileDetails" />
+      <output name="FnProfileDetails_Result" message="tns:FnProfileDetails_Result" />
+    </operation>
+    <operation name="FnResetPassword">
+      <input name="FnResetPassword" message="tns:FnResetPassword" />
+      <output name="FnResetPassword_Result" message="tns:FnResetPassword_Result" />
+    </operation>
+    <operation name="FnSendOTP">
+      <input name="FnSendOTP" message="tns:FnSendOTP" />
+      <output name="FnSendOTP_Result" message="tns:FnSendOTP_Result" />
+    </operation>
+    <operation name="FnShares">
+      <input name="FnShares" message="tns:FnShares" />
+      <output name="FnShares_Result" message="tns:FnShares_Result" />
+    </operation>
+    <operation name="FnUpdatePassword">
+      <input name="FnUpdatePassword" message="tns:FnUpdatePassword" />
+      <output name="FnUpdatePassword_Result" message="tns:FnUpdatePassword_Result" />
+    </operation>
+    <operation name="FnVerifyOTP">
+      <input name="FnVerifyOTP" message="tns:FnVerifyOTP" />
+      <output name="FnVerifyOTP_Result" message="tns:FnVerifyOTP_Result" />
+    </operation>
+    <operation name="FnmemberInfo">
+      <input name="FnmemberInfo" message="tns:FnmemberInfo" />
+      <output name="FnmemberInfo_Result" message="tns:FnmemberInfo_Result" />
+    </operation>
+    <operation name="GetDashboardStatistics">
+      <input name="GetDashboardStatistics" message="tns:GetDashboardStatistics" />
+      <output name="GetDashboardStatistics_Result" message="tns:GetDashboardStatistics_Result" />
+    </operation>
+    <operation name="MembReg">
+      <input name="MembReg" message="tns:MembReg" />
+      <output name="MembReg_Result" message="tns:MembReg_Result" />
+    </operation>
+    <operation name="MiniStatement">
+      <input name="MiniStatement" message="tns:MiniStatement" />
+      <output name="MiniStatement_Result" message="tns:MiniStatement_Result" />
+    </operation>
+    <operation name="NextOfKin">
+      <input name="NextOfKin" message="tns:NextOfKin" />
+      <output name="NextOfKin_Result" message="tns:NextOfKin_Result" />
+    </operation>
+    <operation name="PortalApplication">
+      <input name="PortalApplication" message="tns:PortalApplication" />
+      <output name="PortalApplication_Result" message="tns:PortalApplication_Result" />
+    </operation>
+    <operation name="SetUsernameOnFirstLogin">
+      <input name="SetUsernameOnFirstLogin" message="tns:SetUsernameOnFirstLogin" />
+      <output name="SetUsernameOnFirstLogin_Result" message="tns:SetUsernameOnFirstLogin_Result" />
+    </operation>
+    <operation name="fnActivateAccount2">
+      <input name="fnActivateAccount2" message="tns:fnActivateAccount2" />
+      <output name="fnActivateAccount2_Result" message="tns:fnActivateAccount2_Result" />
+    </operation>
+    <operation name="fnGetBULNumber">
+      <input name="fnGetBULNumber" message="tns:fnGetBULNumber" />
+      <output name="fnGetBULNumber_Result" message="tns:fnGetBULNumber_Result" />
+    </operation>
+    <operation name="fnGetBranchCodes">
+      <input name="fnGetBranchCodes" message="tns:fnGetBranchCodes" />
+      <output name="fnGetBranchCodes_Result" message="tns:fnGetBranchCodes_Result" />
+    </operation>
+    <operation name="fnGetCountries">
+      <input name="fnGetCountries" message="tns:fnGetCountries" />
+      <output name="fnGetCountries_Result" message="tns:fnGetCountries_Result" />
+    </operation>
+    <operation name="fnGetMemberNo">
+      <input name="fnGetMemberNo" message="tns:fnGetMemberNo" />
+      <output name="fnGetMemberNo_Result" message="tns:fnGetMemberNo_Result" />
+    </operation>
+    <operation name="fnGetNextofkin">
+      <input name="fnGetNextofkin" message="tns:fnGetNextofkin" />
+      <output name="fnGetNextofkin_Result" message="tns:fnGetNextofkin_Result" />
+    </operation>
+    <operation name="fnGetPostCodes">
+      <input name="fnGetPostCodes" message="tns:fnGetPostCodes" />
+      <output name="fnGetPostCodes_Result" message="tns:fnGetPostCodes_Result" />
+    </operation>
+    <operation name="fnGetStates">
+      <input name="fnGetStates" message="tns:fnGetStates" />
+      <output name="fnGetStates_Result" message="tns:fnGetStates_Result" />
+    </operation>
+  </portType>
+  <binding name="onlineregistration_Binding" type="tns:onlineregistration_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="AttachDocuments">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:AttachDocuments" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="AttachDocuments">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="AttachDocuments_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnAccountLogin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnAccountLogin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnAccountLogin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnAccountLogin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnActivateAccount">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnActivateAccount" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnActivateAccount">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnActivateAccount_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnChangeOTP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnChangeOTP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangeOTP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangeOTP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnChangePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnChangePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnChangeRequest">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnChangeRequest" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnChangeRequest">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnChangeRequest_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCreateAccount">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnCreateAccount" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCreateAccount">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCreateAccount_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnCreateUsername">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnCreateUsername" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnCreateUsername">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnCreateUsername_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGenerateOTP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnGenerateOTP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGenerateOTP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGenerateOTP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGetMemberDepositStatement">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnGetMemberDepositStatement" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGetMemberDepositStatement">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGetMemberDepositStatement_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGetMemberLoanStatement">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnGetMemberLoanStatement" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGetMemberLoanStatement">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGetMemberLoanStatement_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGetMemberLoansGuaranteed">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnGetMemberLoansGuaranteed" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGetMemberLoansGuaranteed">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGetMemberLoansGuaranteed_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGetMemberLoansGuarantors">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnGetMemberLoansGuarantors" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGetMemberLoansGuarantors">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGetMemberLoansGuarantors_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnGetMemberStatement">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnGetMemberStatement" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnGetMemberStatement">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnGetMemberStatement_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnLogin2">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnLogin2" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnLogin2">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnLogin2_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnLogin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnLogin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnLogin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnLogin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnMemberStatement">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnMemberStatement" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnMemberStatement">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnMemberStatement_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnPortalAccount">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnPortalAccount" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnPortalAccount">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnPortalAccount_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnProfileDetails">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnProfileDetails" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnProfileDetails">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnProfileDetails_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnResetPassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnResetPassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnResetPassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnResetPassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnSendOTP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnSendOTP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnSendOTP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnSendOTP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnShares">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnShares" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnShares">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnShares_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnUpdatePassword">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnUpdatePassword" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnUpdatePassword">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnUpdatePassword_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnVerifyOTP">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnVerifyOTP" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnVerifyOTP">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnVerifyOTP_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="FnmemberInfo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:FnmemberInfo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="FnmemberInfo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="FnmemberInfo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetDashboardStatistics">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:GetDashboardStatistics" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetDashboardStatistics">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetDashboardStatistics_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="MembReg">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:MembReg" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="MembReg">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="MembReg_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="MiniStatement">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:MiniStatement" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="MiniStatement">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="MiniStatement_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="NextOfKin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:NextOfKin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="NextOfKin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="NextOfKin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="PortalApplication">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:PortalApplication" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="PortalApplication">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="PortalApplication_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="SetUsernameOnFirstLogin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:SetUsernameOnFirstLogin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="SetUsernameOnFirstLogin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="SetUsernameOnFirstLogin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnActivateAccount2">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnActivateAccount2" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnActivateAccount2">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnActivateAccount2_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetBULNumber">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetBULNumber" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetBULNumber">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetBULNumber_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetBranchCodes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetBranchCodes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetBranchCodes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetBranchCodes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetCountries">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetCountries" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetCountries">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetCountries_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetMemberNo">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetMemberNo" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetMemberNo">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetMemberNo_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetNextofkin">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetNextofkin" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetNextofkin">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetNextofkin_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetPostCodes">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetPostCodes" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetPostCodes">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetPostCodes_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="fnGetStates">
+      <operation soapAction="urn:microsoft-dynamics-schemas/codeunit/onlineregistration:fnGetStates" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="fnGetStates">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="fnGetStates_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="onlineregistration">
+    <port name="onlineregistration_Port" binding="tns:onlineregistration_Binding">
+      <address location="http://80.240.200.3:7047/BC190/WS/Bulsho%20Sacco%20Ltd/Codeunit/onlineregistration" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>

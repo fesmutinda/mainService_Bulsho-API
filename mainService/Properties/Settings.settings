@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="mainService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="mainService_pc_MemberPicture_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://62.12.114.213:7047/BC190/WS/Bulsho%20Test%20Company/Page/MemberPicture</Value>
+    </Setting>
+    <Setting Name="mainService_signatureReg_MemberSignature_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://62.12.114.213:7047/BC190/WS/Bulsho%20Test%20Company/Page/MemberSignature</Value>
+    </Setting>
+    <Setting Name="mainService_memberReg_onlineregistration" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://80.240.200.3:7047/BC190/WS/Bulsho%20Sacco%20Ltd/Codeunit/onlineregistration</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
